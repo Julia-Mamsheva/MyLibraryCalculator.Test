@@ -1,0 +1,8 @@
+dotnet nuget add source \
+  --username ВАШ_НИК \
+  --password ВАШ_ТОКЕН \
+  --store-password-in-clear-text \
+  --name github \
+  "https://nuget.pkg.github.com/ВАШ_НИК/index.json"
+  
+  dotnet add package ИМЯ_ПАКЕТА --version 1.0.0
