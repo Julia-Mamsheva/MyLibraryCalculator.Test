@@ -20,16 +20,16 @@ jobs:
           dotnet-version: '9.0.x'
           
       - name: Restore dependencies
-          run: dotnet restore
-          env:
-            NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet restore
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Add GitHub Packages source
-          run: dotnet nuget add source \
-            --username Julia-Mamsheva \
-            --password ${{ secrets.PACKAGES_TOKEN }} \
-            --store-password-in-clear-text \
-            --name github \
-            "https://nuget.pkg.github.com/Julia-Mamsheva/index.json"     
+        run: dotnet nuget add source \
+          --username Julia-Mamsheva \
+          --password ${{ secrets.PACKAGES_TOKEN }} \
+          --store-password-in-clear-text \
+          --name github \
+          "https://nuget.pkg.github.com/Julia-Mamsheva/index.json"     
       - name: Restore dependencies
         run: dotnet restore
 
